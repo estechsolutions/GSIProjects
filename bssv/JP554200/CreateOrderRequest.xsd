@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tcc.com/e1/createorderrequest"
+            targetNamespace="http://www.tcc.com/e1/createorderrequest" elementFormDefault="qualified">
+  <xsd:element name="CreateOrderRequest">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="OrderHeader">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="OrderInfo">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="orderId" type="xsd:string"/>
+                    <xsd:element name="orderDate" type="xsd:date"/>
+                    <xsd:element name="originalOrderId" type="xsd:string"/>
+                    <xsd:element name="originalOrderDate" type="xsd:date"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="AgentInfo">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="agentId" type="xsd:string"/>
+                    <xsd:element name="commissionableAgentId" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="StoreInfo">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="PhysicalStoreInfo">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="physicalStoreId" type="xsd:string"/>
+                          <xsd:element name="CommissonableStoreInfo">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="commissionableStoreId" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="CustomerInfo">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="tccCustomerId" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MiscInfo">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="defaultTaxRateUsed" type="xsd:boolean"/>
+                    <xsd:element name="CCRScommissionCalculated" type="xsd:boolean"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="OrderPriceInfo">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="currencyCode" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="CommerceItems">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CommerceItem" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="CommerceItemInfo">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="commerceLineItemId" type="xsd:string"/>
+                          <xsd:element name="skuId" type="xsd:string"/>
+                          <xsd:element name="quantity" type="xsd:string"/>
+                          <xsd:element name="serialNumber" type="xsd:string"/>
+                          <xsd:element name="fulfillmentDate" type="xsd:date"/>
+                          <xsd:element name="itemStatus" type="xsd:string"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ItemPriceInfo">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ItemPrice">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="listPrice" type="xsd:double"/>
+                                <xsd:element name="itemCost" type="xsd:double"/>
+                                <xsd:element name="authCode" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="PaymentGroups">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="PaymentInfo" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="typeCreditCard" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
